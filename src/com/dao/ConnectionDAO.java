@@ -15,9 +15,9 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class ConnectionDAO {
-	String url = "jdbc:mysql://localhost:3306/Management_App";
+	String url = "jdbc:mysql://localhost:3306/project";
 	String username = "root";
-	String password = "neilsql";
+	String password = "radheradhe";
 	Connection conn;
 	//Statement st;
 	public Connection getConnection() throws ClassNotFoundException{

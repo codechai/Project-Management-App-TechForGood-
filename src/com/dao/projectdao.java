@@ -25,7 +25,7 @@ public class projectdao {
 
 	}
 	public int addProject(projectbean pbean) throws SQLException {
-		String query = "insert into projects(projectname, p_manager, no_leaders, no_volunteers, p_budget, p_location, p_from, p_to) values(?,?,?,?,?,?,?,?)";
+		String query = "insert into addproject(projectname, p_manager, no_leaders, no_volunteers, p_budget, p_location, p_from, p_to) values(?,?,?,?,?,?,?,?)";
 		st = conn.prepareStatement(query);		
 		int result = 0;
 		st.setString(1, pbean.getProjectname());
@@ -42,7 +42,7 @@ public class projectdao {
 	}
 	public List<projectbean> listProjects() throws SQLException,ClassNotFoundException{
 		List<projectbean> conCollection = new ArrayList<projectbean>();
-		String query = "select * from projects ";
+		String query = "select * from addproject ";
 		st = (PreparedStatement) conn.prepareStatement(query);
 		ResultSet result = st.executeQuery(query);
 		projectbean contactBean2;
@@ -64,7 +64,7 @@ public class projectdao {
 	}
 	public int deleteproject(String id) throws SQLException {
 		int result = 0;
-		String query = "delete from projects where projectid='"+id+"'";
+		String query = "delete from addproject where projectid='"+id+"'";
 		st = (PreparedStatement) conn.prepareStatement(query);
 		result = st.executeUpdate(query);
 		return result;
